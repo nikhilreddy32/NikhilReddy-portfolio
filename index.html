@@ -96,9 +96,10 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-  font-size: 80px;
+  font-size: clamp(80px, 16vw, 260px);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 0.85;
+  letter-spacing: -6px;
 }
 
 .hero h1 span.blue {
@@ -296,7 +297,7 @@ section h2 {
 
 
 <!-- ABOUT -->
-<section id="About" class="py-28 px-6 text-center">
+<section id="about" class="py-28 px-6 text-center">
 
   <!-- Section Label -->
   <p class="text-blue-500 tracking-widest font-semibold mb-4">
