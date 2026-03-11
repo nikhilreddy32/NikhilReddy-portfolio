@@ -190,15 +190,16 @@ section h2 {
 <body>
 
 <nav>
-  <a href="#hero" class="logo">NRC</a>
+ <a id="logo-link" style="cursor:pointer;">NRC</a>
 
+  
   <ul>
-    <li><a href="#About">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a class="nav-link" data-target="about">About</a></li>
+    <li><a class="nav-link" data-target="skills">Skills</a></li>
+    <li><a class="nav-link" data-target="experience">Experience</a></li>
+    <li><a class="nav-link" data-target="projects">Projects</a></li>
+    <li><a class="nav-link" data-target="education">Education</a></li>
+    <li><a class="nav-link" data-target="contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -1562,6 +1563,20 @@ window.addEventListener("popstate", function (event) {
   }
 });
 </script>
+<script>
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", (e) => {
+        const sectionId = e.target.getAttribute("data-target");
+        const section = document.getElementById(sectionId);
 
+        section.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  </script>
+  <script>
+document.getElementById("logo-link").addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
 </body>
 </html>
